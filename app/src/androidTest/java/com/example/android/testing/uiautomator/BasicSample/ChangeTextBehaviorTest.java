@@ -84,10 +84,22 @@ public class ChangeTextBehaviorTest {
         mDevice.findObject(By.res(BASIC_SAMPLE_PACKAGE, "register_location")).click();
         mDevice.wait(Until.findObject(By.res(BASIC_SAMPLE_PACKAGE, "register_nmea").depth(0)), 1000);
         mDevice.findObject(By.res(BASIC_SAMPLE_PACKAGE, "register_nmea")).click();
-        mDevice.swipe(1033,1346,231,1346,20);
 
-        mDevice.wait(Until.findObject(By.res(BASIC_SAMPLE_PACKAGE, "start_logs").depth(0)), 5000);
+       // mDevice.swipe(1033,1346,231,1346,20);
+        mDevice.wait(Until.findObject(By.text("LOG").depth(0)), 1000);
+        mDevice.findObject(By.text("LOG")).click();
+
+
+        mDevice.wait(Until.findObject(By.res(BASIC_SAMPLE_PACKAGE, "start_logs").depth(0)), 1000);
         mDevice.findObject(By.res(BASIC_SAMPLE_PACKAGE, "start_logs")).click();
+
+        //mDevice.swipe(1033,1346,231,1346,20);
+       // mDevice.swipe(1033,1346,231,1346,20);
+
+        mDevice.wait(Until.findObject(By.text("AGNSS").depth(0)), 1000);
+        mDevice.findObject(By.text("AGNSS")).click();
+        mDevice.wait(Until.findObject(By.res(BASIC_SAMPLE_PACKAGE, "clearAgps").depth(0)), 1000);
+        mDevice.findObject(By.res(BASIC_SAMPLE_PACKAGE, "clearAgps")).click();
 
         // Type text and then press the button.
         //mDevice.findObject(By.res(BASIC_SAMPLE_PACKAGE, "editTextUserInput")).setText(STRING_TO_BE_TYPED);
